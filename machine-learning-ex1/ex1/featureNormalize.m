@@ -26,11 +26,19 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
+mu = mean(X_norm);
+sigma = std(X_norm);
+X_norm = X_norm .- mu;
+X_norm = X_norm ./ sigma;
 
+fprintf('After normalization 10 examples from the dataset: \n');
+fprintf(' x = [%.0f %.0f]\n', [X_norm(1:10,:)]');
+%number_of_features = len(X)
 
-
-
-
+%for i = 1:number_of_features
+%
+%  actual_features = X(:,i)
+%  mean = sum(actual_features) / length(actual_features)
 
 
 

@@ -6,6 +6,7 @@ function [theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters
 % Initialize some useful values
 m = length(y); % number of training examples
 J_history = zeros(num_iters, 1);
+const = alpha * (1/m);
 
 for iter = 1:num_iters
 
@@ -18,12 +19,9 @@ for iter = 1:num_iters
     %
 
 
-
-
-
-
-
-
+    error = (X * theta) - y;
+    sss = const * (error' * X);
+    theta = theta - sss';
 
 
 
